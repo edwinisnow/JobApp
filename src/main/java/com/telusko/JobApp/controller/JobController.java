@@ -43,10 +43,22 @@ public class JobController {
     public JobPost getJob(@PathVariable("postId") int postId) {
         return service.getJob(postId);
     }
+
     @PostMapping("jobPost")
     public JobPost getJob(@RequestBody JobPost jobPost) {
         service.addJob(jobPost);
         return service.getJob(jobPost.getPostId());
+    }
+
+    @PutMapping("jobPost")
+    public JobPost updateJob(@RequestBody JobPost jobPost) {
+        service.updateJob(jobPost);
+        return service.getJob(jobPost.getPostId());
+    }
+    @DeleteMapping("jobPost/{postId}")
+    public String deleteJob(@PathVariable int postId) {
+        service.deleteJob(postId);
+        return "Deleted";
     }
 
 }
