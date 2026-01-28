@@ -1,5 +1,6 @@
 package com.telusko.JobApp.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -14,8 +15,8 @@ public class LoggingAspect {
 
 //    return type, class-name.method-name, (args)
 //    @Before("execution(* com.telusko.JobApp.service.JobService.JobService *(..)")
-    @Before("execution(* com.telusko.JobApp.service.JobService.*(..))")
-    public void logMethodCall() {
-        LOGGER.info("Method called");
+    @Before("execution(* com.telusko.JobApp.service.JobService.getAllJobs(..))")
+    public void logMethodCall(JoinPoint jp) {
+        LOGGER.info("Method called " + jp.getSignature().getName());
     }
 }
