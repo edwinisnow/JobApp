@@ -27,6 +27,13 @@ public class JobService {
     }
 
     public JobPost getJob(int postId) {
+        try {
+            int num  = 10/1;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            System.out.println("success");
+        }
         return repo.findById(postId).orElse(new JobPost());
     }
 
