@@ -15,21 +15,21 @@ public class JobController {
     private JobService service;
 
 
-//    @GetMapping({"/", "home"})
-//    public String home() {
-//        return "home";
-//    }
-//
-//
-//    @GetMapping("addjob")
-//    public String addJob() {
-//        return "addjob";
-//    }
-//
-//
+    @GetMapping({"/", "home"})
+    public String home() {
+        return "home";
+    }
+
+
+    @GetMapping("addjob")
+    public String addJob() {
+        return "addjob";
+    }
+
+
 //    @PostMapping("handleForm")
 //    public String handleForm(JobPost jobPost) {
-//        service.addJob(jobPost);
+//        service.save(jobPost);
 //        return "success";
 //
 //    }
